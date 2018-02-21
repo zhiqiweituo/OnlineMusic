@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 禁用动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 配置成开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 扩展名称action -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 主题配置成简单 -->
+    <constant name="struts.ui.theme" value="simple" />
+    
+    <package name="back" namespace="/back" extends="struts-default">
+      <action name="admin_*" class="com.zhi.controller.AdminAction" method="{1}">
+        <result name="success" type="redirect">/background/admin_login.jsp</result>
+      </action>
+	  <action name="dataDicType_*" class="com.zhi.controller.DataDicTypeAction" method="{1}">
+      </action>
+      <action name="dataDic_*" class="com.zhi.controller.DataDicAction" method="{1}">
+      </action>
+      <action name="singer_*" class="com.zhi.controller.SingerAction" method="{1}">
+      </action>
+      <action name="song_*" class="com.zhi.controller.SongAction" method="{1}">
+      </action>
+	  <action name="user_*" class="com.zhi.controller.UserAction" method="{1}">
+	    <result name="addUI">/background/user/user_add.jsp</result>
+	    <result name="editUI">/background/user/user_edit.jsp</result>
+	  </action>
+	  
+	</package>
+	
+	<package name="fore" namespace="/" extends="struts-default">
+	
+	</package>
+</struts>

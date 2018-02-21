@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+  
+<hibernate-configuration>  
+    <session-factory>  
+		
+		<!--方言-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>  
+
+        <!-- 显示sql语句 -->  
+        <property name="show_sql">true</property>  
+        
+		<!-- 自动更新 -->
+        <property name="hbm2ddl.auto">update</property>
+  
+  		<mapping class="com.zhi.entity.Admin"/>
+  		<mapping class="com.zhi.entity.User"/>
+  		<mapping class="com.zhi.entity.Singer"/>
+  		<mapping class="com.zhi.entity.Song"/>
+  		<mapping class="com.zhi.entity.DataDicType"/>
+  		<mapping class="com.zhi.entity.DataDic"/>
+  
+    </session-factory>  
+</hibernate-configuration>
